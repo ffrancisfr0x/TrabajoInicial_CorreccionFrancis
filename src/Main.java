@@ -1,7 +1,10 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TransferQueue;
 
 public class Main {
     private static ArrayList<Tareas> listaTareas = new ArrayList<>();
@@ -153,6 +156,13 @@ public class Main {
     }
 
     private static void guardarLista(){
-
+        try (FileWriter fileWriter = new FileWriter("tareas.txt")){
+            for (Tareas tarea : listaTareas){
+                fileWriter.write("Título: " + tarea.getTitulo() + " - Descripción: " + tarea.getDescripcion() +
+                        " - Prioridad: " + tarea.getPrioridad() + "\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
