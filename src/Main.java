@@ -20,6 +20,8 @@ public class Main {
             System.out.println("3.Marcar tarea como completada");
             System.out.println();
             System.out.println("4.Eliminar tarea");
+            System.out.println();
+            System.out.println("5.Salir");
 
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
