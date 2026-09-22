@@ -38,7 +38,7 @@ public class Main {
                 case 1 -> añadirTarea();
                 case 2 -> verLista();
                 case 3 -> marcarCompletada();
-                case 4 -> tareas.eliminarTarea();
+                case 4 -> eliminarTarea();
             }
         } while (opcion != 5);
     }
@@ -93,7 +93,7 @@ public class Main {
         }
     }
 
-    public void eliminarTarea() {
+    private static void eliminarTarea() {
         verLista();
 
         System.out.println("¿Qué tarea quieres eliminar?");
