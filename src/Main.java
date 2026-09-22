@@ -31,7 +31,7 @@ public class Main {
                 sc.next();
                 continue;
             }
-            if (opcion > 5 || opcion < 1) {
+            if (opcion > 5 || opcion < 0) {
                 System.out.println("Opcion no valida");
             } else {
                 switch (opcion) {
