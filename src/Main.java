@@ -14,14 +14,11 @@ public class Main {
             System.out.println("---------------------------lista de tareas---------------------------");
             System.out.println();
             System.out.println("1.Añadir tarea");
-            System.out.println();
             System.out.println("2.Ver lista de tareas pendientes");
-            System.out.println();
             System.out.println("3.Marcar tarea como completada");
-            System.out.println();
             System.out.println("4.Eliminar tarea");
-            System.out.println();
-            System.out.println("5.Salir");
+            System.out.println("5.Guardar lista de tareas");
+            System.out.println("0.Salir");
 
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
@@ -42,8 +39,9 @@ public class Main {
                 case 2 -> verLista();
                 case 3 -> marcarCompletada();
                 case 4 -> eliminarTarea();
+                case 5 -> guardarLista();
             }
-        } while (opcion != 5);
+        } while (opcion != 0);
     }
 
     private static void añadirTarea() {
@@ -152,5 +150,9 @@ public class Main {
             System.out.println("Opción no válida");
             sc.next();
         }
+    }
+
+    private static void guardarLista(){
+
     }
 }
