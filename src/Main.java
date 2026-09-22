@@ -57,10 +57,16 @@ public class Main {
         System.out.println("Tarea añadida.");
     }
 
-    public void verLista() {
-        for (int i = 0; i < listaTareas.size(); i++) {
-            System.out.println((i + 1) + ". " + listaTareas.get(i));
-        }
+    private static void verLista() {
+            for (int i = 0; i < listaTareas.size(); i++) {
+                Tareas tarea = listaTareas.get(i);
+                System.out.println(
+                        (i + 1) + ". "
+                                + tarea.getTitulo()
+                                + " - "
+                                + tarea.getDescripcion()
+                );
+            }
     }
 
     public void marcarCompletada() {
