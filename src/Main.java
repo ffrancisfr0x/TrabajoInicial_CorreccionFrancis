@@ -8,7 +8,6 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Tareas tareas = new Tareas("","",false);
         int opcion = 0;
         do {
             System.out.println("---------------------------lista de tareas---------------------------");
@@ -51,7 +50,7 @@ public class Main {
         System.out.println("Introduce una descripción:");
         String descripcion = sc.nextLine();
 
-        Tareas tarea = new Tareas(titulo, descripcion, false);
+        Tareas tarea = new Tareas(titulo, descripcion, false, Prioridad.BAJA);
 
         listaTareas.add(tarea);
 

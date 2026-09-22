@@ -3,17 +3,17 @@ import java.util.EnumMap;
 import java.util.Scanner;
 
 public class Tareas {
-    Scanner sc = new Scanner(System.in);
 
     private String titulo;
     private String descripcion;
     private boolean marcado;
     private Prioridad prioridad;
 
-    public Tareas(String titulo, String descripcion, boolean marcado) {
+    public Tareas(String titulo, String descripcion, boolean marcado, Prioridad prioridad) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.marcado = marcado;
+        this.prioridad = prioridad;
     }
 
     public String getTitulo() {
@@ -38,6 +38,14 @@ public class Tareas {
 
     public void setMarcado(boolean marcado) {
         this.marcado = marcado;
+    }
+
+    public Prioridad getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(Prioridad prioridad) {
+        this.prioridad = prioridad;
     }
 }
 
