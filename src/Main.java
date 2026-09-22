@@ -50,11 +50,30 @@ public class Main {
         System.out.println("Introduce una descripción:");
         String descripcion = sc.nextLine();
 
-        Tareas tarea = new Tareas(titulo, descripcion, false, Prioridad.BAJA);
+        System.out.printf("Introduce el tipo de prioridad (alta, media o baja): ");
+        String prioridad = sc.nextLine();
 
-        listaTareas.add(tarea);
+        if (prioridad.equalsIgnoreCase("baja")){
+            Tareas tarea = new Tareas(titulo, descripcion, false, Prioridad.BAJA);
+            listaTareas.add(tarea);
+            System.out.println("Tarea añadida.");
 
-        System.out.println("Tarea añadida.");
+        } else if (prioridad.equalsIgnoreCase("media")){
+            Tareas tarea = new Tareas(titulo, descripcion, false, Prioridad.MEDIA);
+            listaTareas.add(tarea);
+            System.out.println("Tarea añadida.");
+
+        } else if (prioridad.equalsIgnoreCase("alta")){
+            Tareas tarea = new Tareas(titulo, descripcion, false, Prioridad.ALTA);
+            listaTareas.add(tarea);
+            System.out.println("Tarea añadida.");
+
+        } else {
+            System.out.println("No has escrito un tipo de prioridad indicado");
+            System.out.println("Cancelando...");
+        }
+
+        System.out.println();
     }
 
     private static void verLista() {
