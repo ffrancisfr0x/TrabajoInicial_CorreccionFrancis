@@ -36,8 +36,8 @@ public class Main {
             }
             switch (opcion) {
                 case 1 -> añadirTarea();
-                case 2 -> tareas.verLista();
-                case 3 -> tareas.marcarCompletada();
+                case 2 -> verLista();
+                case 3 -> marcarCompletada();
                 case 4 -> tareas.eliminarTarea();
             }
         } while (opcion != 5);
@@ -69,18 +69,20 @@ public class Main {
             }
     }
 
-    public void marcarCompletada() {
+    private static void marcarCompletada() {
+
         verLista();
 
         System.out.println("¿Qué tarea quieres completar?");
 
-        if (sc.hasNextInt()) {
+        if(sc.hasNextInt()) {
 
             int numero = sc.nextInt();
 
-            if (numero >= 1 && numero <= listaTareas.size()) {
-                listaTareas.remove(numero - 1);
+            if(numero >= 1 && numero <= listaTareas.size()) {
+                listaTareas.get(numero - 1).setMarcado(true);
                 System.out.println("Tarea completada");
+
             } else {
                 System.out.println("Opción no válida");
             }
