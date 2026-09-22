@@ -23,6 +23,7 @@ public class Main {
 
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
+                sc.nextLine();
             } else {
                 System.out.println("Opcion no valida");
                 sc.next();
