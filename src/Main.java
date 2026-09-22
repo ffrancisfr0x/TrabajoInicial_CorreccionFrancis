@@ -70,24 +70,43 @@ public class Main {
             System.out.println("Tarea añadida.");
 
         } else {
-            System.out.println("No has escrito un tipo de prioridad indicado");
+            System.out.println("Prioridad no válida");
             System.out.println("Cancelando...");
         }
 
     }
 
     private static void verLista() {
-            for (int i = 0; i < listaTareas.size(); i++) {
-                Tareas tarea = listaTareas.get(i);
-                if (!tarea.isMarcado()){
-                    System.out.println(
-                            (i + 1) + ". "
-                                    + tarea.getTitulo()
-                                    + " - "
-                                    + tarea.getDescripcion()
-                    );
-                }
+
+        System.out.println("¿Qué prioridad quieres ver? (alta, media o baja)");
+        String prioridad = sc.nextLine();
+
+        Prioridad prioridadBuscada;
+
+        if (prioridad.equalsIgnoreCase("alta")) {
+            prioridadBuscada = Prioridad.ALTA;
+        } else if (prioridad.equalsIgnoreCase("media")) {
+            prioridadBuscada = Prioridad.MEDIA;
+        } else if (prioridad.equalsIgnoreCase("baja")) {
+            prioridadBuscada = Prioridad.BAJA;
+        } else {
+            System.out.println("Prioridad no válida");
+            return;
+        }
+
+        for (int i = 0; i < listaTareas.size(); i++) {
+            Tareas tarea = listaTareas.get(i);
+
+            if (!tarea.isMarcado() && tarea.getPrioridad() == prioridadBuscada) {
+                System.out.println(
+                        (i + 1) + ". "
+                                + tarea.getTitulo()
+                                + " - "
+                                + tarea.getDescripcion()
+                                + " [" + tarea.getPrioridad() + "]"
+                );
             }
+        }
     }
 
     private static void marcarCompletada() {
