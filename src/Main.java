@@ -161,8 +161,9 @@ public class Main {
                 fileWriter.write("Título: " + tarea.getTitulo() + " - Descripción: " + tarea.getDescripcion() +
                         " - Prioridad: " + tarea.getPrioridad() + "\n");
             }
+            System.out.println("Lista guardada correctamente.");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al guardar el archivo.");
         }
     }
 }
