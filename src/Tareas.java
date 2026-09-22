@@ -4,8 +4,24 @@ import java.util.Scanner;
 public class Tareas {
     ArrayList<String> listaTareas = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-    String descripcion;
-    boolean marcado;
+
+    private String titulo;
+    private String descripcion;
+    private boolean marcado;
+
+    public Tareas(String titulo, String descripcion, boolean marcado) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.marcado = marcado;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public String getDescripcion() {
         return descripcion;
@@ -15,66 +31,12 @@ public class Tareas {
         this.descripcion = descripcion;
     }
 
-    public Tareas(String descripcion) {
-        this.descripcion = descripcion;
-        this.marcado = false;
+    public boolean isMarcado() {
+        return marcado;
     }
 
-    public void añadirTarea() {
-        System.out.println("introduce una descripción: ");
-        descripcion = sc.nextLine();
-        System.out.println(" ");
-        listaTareas.add(descripcion);
-    }
-
-    public void verLista() {
-        for (int i = 0; i < listaTareas.size(); i++) {
-            System.out.println((i + 1) + ". " + listaTareas.get(i));
-        }
-    }
-
-    public void marcarCompletada() {
-        verLista();
-
-        System.out.println("¿Qué tarea quieres completar?");
-
-        if (sc.hasNextInt()) {
-
-            int numero = sc.nextInt();
-
-            if (numero >= 1 && numero <= listaTareas.size()) {
-                listaTareas.remove(numero - 1);
-                System.out.println("Tarea completada");
-            } else {
-                System.out.println("Opción no válida");
-            }
-
-        } else {
-            System.out.println("Opción no válida");
-            sc.next();
-        }
-    }
-
-    public void eliminarTarea() {
-        verLista();
-
-        System.out.println("¿Qué tarea quieres eliminar?");
-
-        if (sc.hasNextInt()) {
-
-            int numero = sc.nextInt();
-
-            if (numero >= 1 && numero <= listaTareas.size()) {
-                listaTareas.remove(numero - 1);
-                System.out.println("Tarea eliminada");
-            } else {
-                System.out.println("Opción no válida");
-            }
-
-        } else {
-            System.out.println("Opción no válida");
-            sc.next();
-        }
+    public void setMarcado(boolean marcado) {
+        this.marcado = marcado;
     }
 }
 

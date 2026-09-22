@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Tareas tareas = new Tareas("");
+        Tareas tareas = new Tareas("","",false);
         int opcion = 0;
         do {
             System.out.println("---------------------------lista de tareas---------------------------");
@@ -38,5 +38,64 @@ public class Main {
                 case 4 -> tareas.eliminarTarea();
             }
         } while (opcion != 5);
+    }
+
+    public void añadirTarea() {
+        System.out.println("introduce un título: ");
+        titulo = sc.nextLine();
+        System.out.println("introduce una descripción: ");
+        descripcion = sc.nextLine();
+        System.out.println(" ");
+        listaTareas.add();
+    }
+
+    public void verLista() {
+        for (int i = 0; i < listaTareas.size(); i++) {
+            System.out.println((i + 1) + ". " + listaTareas.get(i));
+        }
+    }
+
+    public void marcarCompletada() {
+        verLista();
+
+        System.out.println("¿Qué tarea quieres completar?");
+
+        if (sc.hasNextInt()) {
+
+            int numero = sc.nextInt();
+
+            if (numero >= 1 && numero <= listaTareas.size()) {
+                listaTareas.remove(numero - 1);
+                System.out.println("Tarea completada");
+            } else {
+                System.out.println("Opción no válida");
+            }
+
+        } else {
+            System.out.println("Opción no válida");
+            sc.next();
+        }
+    }
+
+    public void eliminarTarea() {
+        verLista();
+
+        System.out.println("¿Qué tarea quieres eliminar?");
+
+        if (sc.hasNextInt()) {
+
+            int numero = sc.nextInt();
+
+            if (numero >= 1 && numero <= listaTareas.size()) {
+                listaTareas.remove(numero - 1);
+                System.out.println("Tarea eliminada");
+            } else {
+                System.out.println("Opción no válida");
+            }
+
+        } else {
+            System.out.println("Opción no válida");
+            sc.next();
+        }
     }
 }
