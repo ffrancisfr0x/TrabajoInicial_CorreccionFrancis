@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         int opcion = 0;
         do {
+            System.out.println();
             System.out.println("---------------------------lista de tareas---------------------------");
             System.out.println();
             System.out.println("1.Añadir tarea");
@@ -50,7 +51,7 @@ public class Main {
         System.out.println("Introduce una descripción:");
         String descripcion = sc.nextLine();
 
-        System.out.printf("Introduce el tipo de prioridad (alta, media o baja): ");
+        System.out.println("Introduce el tipo de prioridad (alta, media o baja): ");
         String prioridad = sc.nextLine();
 
         if (prioridad.equalsIgnoreCase("baja")){
@@ -73,7 +74,6 @@ public class Main {
             System.out.println("Cancelando...");
         }
 
-        System.out.println();
     }
 
     private static void verLista() {
