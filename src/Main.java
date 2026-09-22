@@ -111,8 +111,6 @@ public class Main {
 
     private static void marcarCompletada() {
 
-        verLista();
-
         System.out.println("¿Qué tarea quieres completar?");
 
         if(sc.hasNextInt()) {
@@ -134,7 +132,6 @@ public class Main {
     }
 
     private static void eliminarTarea() {
-        verLista();
 
         System.out.println("¿Qué tarea quieres eliminar?");
 
