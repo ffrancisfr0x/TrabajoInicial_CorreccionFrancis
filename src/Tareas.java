@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.Scanner;
 
 public class Tareas {
@@ -7,6 +8,7 @@ public class Tareas {
     private String titulo;
     private String descripcion;
     private boolean marcado;
+    private Prioridad prioridad;
 
     public Tareas(String titulo, String descripcion, boolean marcado) {
         this.titulo = titulo;
