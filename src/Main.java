@@ -1,10 +1,13 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    private static ArrayList<Tareas> listaTareas = new ArrayList<>();
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Tareas tareas = new Tareas("","",false);
         int opcion = 0;
         do {
@@ -32,7 +35,7 @@ public class Main {
                 }
             }
             switch (opcion) {
-                case 1 -> tareas.añadirTarea();
+                case 1 -> añadirTarea();
                 case 2 -> tareas.verLista();
                 case 3 -> tareas.marcarCompletada();
                 case 4 -> tareas.eliminarTarea();
@@ -40,13 +43,18 @@ public class Main {
         } while (opcion != 5);
     }
 
-    public void añadirTarea() {
-        System.out.println("introduce un título: ");
-        titulo = sc.nextLine();
-        System.out.println("introduce una descripción: ");
-        descripcion = sc.nextLine();
-        System.out.println(" ");
-        listaTareas.add();
+    private static void añadirTarea() {
+        System.out.println("Introduce un título:");
+        String titulo = sc.nextLine();
+
+        System.out.println("Introduce una descripción:");
+        String descripcion = sc.nextLine();
+
+        Tareas tarea = new Tareas(titulo, descripcion, false);
+
+        listaTareas.add(tarea);
+
+        System.out.println("Tarea añadida.");
     }
 
     public void verLista() {

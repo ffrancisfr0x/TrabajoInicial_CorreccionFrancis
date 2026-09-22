@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tareas {
-    ArrayList<String> listaTareas = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
     private String titulo;
