@@ -61,12 +61,14 @@ public class Main {
     private static void verLista() {
             for (int i = 0; i < listaTareas.size(); i++) {
                 Tareas tarea = listaTareas.get(i);
-                System.out.println(
-                        (i + 1) + ". "
-                                + tarea.getTitulo()
-                                + " - "
-                                + tarea.getDescripcion()
-                );
+                if (!tarea.isMarcado()){
+                    System.out.println(
+                            (i + 1) + ". "
+                                    + tarea.getTitulo()
+                                    + " - "
+                                    + tarea.getDescripcion()
+                    );
+                }
             }
     }
 
