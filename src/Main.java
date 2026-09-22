@@ -159,7 +159,7 @@ public class Main {
         try (FileWriter fileWriter = new FileWriter("tareas.txt")){
             for (Tareas tarea : listaTareas){
                 fileWriter.write("Título: " + tarea.getTitulo() + " - Descripción: " + tarea.getDescripcion() +
-                        " - Prioridad: " + tarea.getPrioridad() + "\n");
+                        " - Prioridad: " + tarea.getPrioridad() + " - Completado: " + tarea.isMarcado() + "\n");
             }
             System.out.println("Lista guardada correctamente.");
         } catch (IOException e) {
